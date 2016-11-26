@@ -7,7 +7,8 @@ public abstract class ProcesoPoi implements Job
     @SuppressWarnings("rawtypes")
 	private static Class SIGUIENTE_PROCESO;
 
-    public static Class getSiguienteProceso()
+    @SuppressWarnings("rawtypes")
+	public static Class getSiguienteProceso()
     {
         return SIGUIENTE_PROCESO;
     }

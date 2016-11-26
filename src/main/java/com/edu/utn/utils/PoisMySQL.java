@@ -5,10 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.hibernate.Session;
-
 import com.edu.utn.infoba.modelo.PuntoDeInteres;
-import org.hibernate.Transaction;
 
 public class PoisMySQL implements DataBase
 {

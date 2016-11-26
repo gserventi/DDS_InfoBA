@@ -11,7 +11,6 @@ import com.edu.utn.infoba.ReportePorFecha;
 import com.edu.utn.infoba.ReportePorUsuario;
 import com.edu.utn.infoba.modelo.Busqueda;
 import com.edu.utn.infoba.modelo.PuntoDeInteres;
-import com.edu.utn.infoba.modelo.Usuario;
 import com.edu.utn.utils.CSVExporter;
 import com.edu.utn.utils.Configuracion;
 import java.io.File;

@@ -102,6 +102,7 @@ public class FuenteDeDatos
 			String line = br.readLine();
 			while (null != line)
             {
+				@SuppressWarnings("static-access")
 				String [] campos = line.split(this.separador);
 
 				poi = this.buscarPuntoDeInteresPorNombre(campos[0]);

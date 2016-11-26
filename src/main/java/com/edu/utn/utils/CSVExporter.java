@@ -26,7 +26,8 @@ public class CSVExporter implements ReportExporter
                 f.createNewFile();
                 f.setWritable(true);
 
-                FileWriter writer = new FileWriter(f);
+                @SuppressWarnings("resource")
+				FileWriter writer = new FileWriter(f);
                 String header = prepararEncabezado(Columnas, DEFAULT_SEPARATOR);
                 writer.write(header);
                 writer.write("\n");

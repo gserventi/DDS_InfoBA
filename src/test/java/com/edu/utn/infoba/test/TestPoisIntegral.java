@@ -2,8 +2,6 @@ package com.edu.utn.infoba.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

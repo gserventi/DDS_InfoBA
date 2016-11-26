@@ -13,14 +13,12 @@ import com.edu.utn.infoba.FuenteDeDatos;
 import com.edu.utn.infoba.MockMailSender;
 import com.edu.utn.infoba.ReportesProcesos;
 import com.edu.utn.infoba.ResulProcesos;
-import com.edu.utn.infoba.modelo.Administrador;
 import com.edu.utn.infoba.modelo.PuntoDeInteres;
 import com.edu.utn.utils.ServicioRestBaja;
 
 public class RepositorioPois
 {
 	protected EntityManager em;
-	private List<Administrador> administradores;
 	private List<FuenteDeDatos> fuentesDeDatos;
 	private RepositorioBusqueda repoBusqueda;
 	//private String usuario = "Usuario123";
@@ -32,7 +30,6 @@ public class RepositorioPois
 	public RepositorioPois(RepositorioBusqueda repoBusc, EntityManager em)
     {
 		this.em = em;
-		this.administradores = new ArrayList<>();
 		this.fuentesDeDatos = new ArrayList<>();
 		this.repoBusqueda = repoBusc;
 		this.estadisticasHabilitadas = true;

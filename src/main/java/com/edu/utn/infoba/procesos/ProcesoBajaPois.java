@@ -1,6 +1,5 @@
 package com.edu.utn.infoba.procesos;
 
-import com.edu.utn.infoba.*;
 import com.edu.utn.infoba.repositorios.RepositorioPois;
 
 import org.quartz.JobExecutionContext;

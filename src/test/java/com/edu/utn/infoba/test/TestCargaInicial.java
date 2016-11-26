@@ -18,7 +18,7 @@ import com.edu.utn.infoba.MailSender;
 import com.edu.utn.infoba.MockMailSender;
 import com.edu.utn.infoba.OrigenDeDatosDummy;
 import com.edu.utn.infoba.modelo.*;
-import com.edu.utn.infoba.repositorios.Repositorio;
+//import com.edu.utn.infoba.repositorios.Repositorio;
 import com.edu.utn.infoba.repositorios.RepositorioBusqueda;
 import com.edu.utn.infoba.repositorios.RepositorioPois;
 import com.edu.utn.utils.MongoDBConnection;
@@ -29,7 +29,7 @@ import com.edu.utn.utils.PoisMySQL;
 public class TestCargaInicial {
 	private static final String PERSISTENCE_UNIT_NAME = "infoba";
 	private EntityManagerFactory emFactory;
-	private Repositorio repositorio;
+//	private Repositorio repositorio;
 	private RepositorioPois repositorioPois;
 	private MailSender mailSender;
 	private FuenteDeDatos fuenteMySql;
@@ -45,7 +45,7 @@ public class TestCargaInicial {
     {
 		emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		EntityManager em = emFactory.createEntityManager();
-		repositorio = new Repositorio(em,mailSender);
+//		repositorio = new Repositorio(em,mailSender);
 		mailSender = new MockMailSender();
 		Datastore ds = MongoDBConnection.getInstance().getDatastore();
 		repositorioPois = new RepositorioPois(new RepositorioBusqueda(ds, mailSender),em);
@@ -63,8 +63,8 @@ public class TestCargaInicial {
 	
 	@Test
 	public void altaDeUsuarios() {
-		String accion1 = "BuscarPOI";
-		String accion2 = "VisualizarBusquedas";
+//		String accion1 = "BuscarPOI";
+//		String accion2 = "VisualizarBusquedas";
 		
 //		Administrador usuario1 = new Administrador("admin1","pass1");
 //		usuario1.agregarAccion(new AccionesUsuario(accion1));

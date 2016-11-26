@@ -12,7 +12,6 @@ import org.mongodb.morphia.Datastore;
 
 import com.edu.utn.infoba.MailSender;
 import com.edu.utn.infoba.modelo.Busqueda;
-import com.edu.utn.infoba.modelo.PuntoDeInteres;
 import com.edu.utn.infoba.repositorios.RepositorioBusqueda;
 import com.edu.utn.utils.MongoDBConnection;
 

@@ -180,6 +180,7 @@ public abstract class ProcesoListener implements JobListener
 		try
 		{
 
+			@SuppressWarnings("rawtypes")
 			Class actualProceso = getClass().getClassLoader().loadClass(nombreProcesoActual);
 
 			if (actualProceso != null)

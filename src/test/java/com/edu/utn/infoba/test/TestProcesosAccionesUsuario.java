@@ -111,7 +111,8 @@ public class TestProcesosAccionesUsuario
             JobKey key = new JobKey(ProcesoAccionesPorUsuario.class.getSimpleName());
             JobDetail job = JobBuilder.newJob(ProcesoAccionesPorUsuario.class).withIdentity(key).requestRecovery(true).build();
             Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger").startNow().build();
-            ProcesoAccionesPorUsuarioListener procesoListener = new ProcesoAccionesPorUsuarioListener();
+            @SuppressWarnings("unused")
+			ProcesoAccionesPorUsuarioListener procesoListener = new ProcesoAccionesPorUsuarioListener();
 
             // Crea una instancia del proceso inicial y su listener
             ProcesoAccionesPorUsuarioListener listener = new ProcesoAccionesPorUsuarioListener();

@@ -1,7 +1,6 @@
 package com.edu.utn.infoba;
 
 import java.util.LinkedHashSet;
-import java.util.List;
 import com.edu.utn.infoba.modelo.Busqueda;
 
 public class ReportePorUsuarioAdapter implements ReportesDataAdapter

@@ -4,7 +4,6 @@ import com.edu.utn.infoba.procesos.ProcesoActualizaLocalesListener;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
-import org.quartz.JobListener;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
@@ -13,7 +12,6 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.KeyMatcher;
 
 import com.edu.utn.infoba.FuenteDeDatos;
-import com.edu.utn.infoba.OrigenDeDatos;
 import com.edu.utn.infoba.OrigenDeDatosDummy;
 import com.edu.utn.infoba.procesos.ProcesoActualizaLocales;
 import com.edu.utn.infoba.procesos.ProcesoListener;

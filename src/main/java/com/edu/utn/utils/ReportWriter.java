@@ -1,6 +1,5 @@
 package com.edu.utn.utils;
 
-import com.edu.utn.infoba.EstadisticaBusqueda;
 import com.edu.utn.infoba.ReportesDataAdapter;
 
 import java.util.Arrays;

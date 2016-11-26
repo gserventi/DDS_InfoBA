@@ -4,7 +4,6 @@ import com.edu.utn.utils.ReportWriter;
 
 import java.util.List;
 import com.edu.utn.infoba.modelo.Busqueda;
-import java.util.HashSet;
 
 public class ReportePorUsuario
 {

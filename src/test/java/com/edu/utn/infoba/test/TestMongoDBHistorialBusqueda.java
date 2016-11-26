@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -23,8 +22,6 @@ import com.edu.utn.infoba.repositorios.RepositorioBusqueda;
 public class TestMongoDBHistorialBusqueda
 {
 	private Busqueda busqueda;
-	private Banco banco1;
-	private Banco banco2;
     private Datastore datastore;
     private RepositorioBusqueda repoBusqueda;
     private MailSender mailSender;
@@ -37,8 +34,6 @@ public class TestMongoDBHistorialBusqueda
 
     @Test
     public void insertarDocumento() throws ParseException  {
-     	banco1 = new Banco("ITAU Centro", null, new Coordenadas(22.0, 15.0));
-     	banco2 = new Banco("ITAU Sur", null, new Coordenadas(22.0, 15.0));
         
     	busqueda = new Busqueda();
     	busqueda.setTexto("IT");
