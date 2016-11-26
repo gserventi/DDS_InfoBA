@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<f:event listener="#{loginBean.verificarSesionAdministrador()}" type="preRenderView"></f:event>
+</h:head>
+
+  <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+  	
+    <ui:define name="content">          
+  		
+  	   <p:panel id="panel" header="Acciones ante la búsqueda">
+			 
+			<h:panelGrid columns="2">
+				<p:selectOneMenu id="accionSelect" value="#{accionesConsultaBean.accion}" style="width:150px">                  
+                  <f:selectItem itemLabel="Elegir Acción" itemValue="" noSelectionOption="true" />
+                  <f:selectItems value="#{accionesConsultaBean.accionesItems}" />                  
+                </p:selectOneMenu>
+                <h:form>
+                	<p:commandButton value="Agregar" id="add" update="listaAcciones" actionListener="#{accionesConsultaBean.buttonAction}" />
+                </h:form>                               
+			</h:panelGrid>
+			
+			<h:panelGrid columns="1" style="min-width: 300px;">
+				<p:dataList id="listaAcciones"  value="#{accionesConsultaBean.acciones}" var="accionItem" type="ordered">
+	         		<f:facet name="header">
+	            	Acciones
+	        		</f:facet>
+	        		#{accionItem}	        		
+	    		</p:dataList>
+    		</h:panelGrid>
+    						
+			<h:panelGrid columns="2">					
+				<p:commandButton value="OK" update="panel" actionListener="#{accionesConsultaBean.aceptar}"></p:commandButton>
+				<p:commandButton value="Cancelar" update="panel" actionListener="#{accionesConsultaBean.cancelar}"></p:commandButton>				
+			</h:panelGrid>   
+		     
+  	    </p:panel>
+  	      
+    </ui:define>
+		
+  </ui:composition>
+
+</html>

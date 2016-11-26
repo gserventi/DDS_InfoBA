@@ -1,0 +1,18 @@
+language: java
+jdk:
+  - oraclejdk8
+services:
+  - mysql
+addons:
+  apt:
+    sources:
+      - mongodb-upstart
+      - mongodb-3.0-precise
+    packages:
+      - mongodb-org-server
+      - mongodb-org-shell
+before_script:
+  - sleep 16
+  - mysql -e 'create database infoba;'
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

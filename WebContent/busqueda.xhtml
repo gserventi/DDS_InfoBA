@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<f:event listener="#{loginBean.verificarSesion()}" type="preRenderView"></f:event>
+</h:head>
+
+  <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<p:panel id="panel" header="Buscar Puntos de Interés">			
+				<h:panelGrid columns="5">					
+					<p:outputLabel value="Criterio:" />
+					<p:inputText id="usuario" value="#{busquedaBean.criterio}"
+						required="false" label="Criterio">
+					</p:inputText>
+					<p:commandButton value="Buscar" update="lista-pois"
+						actionListener="#{busquedaBean.buscar}" icon="ui-icon-search" />
+					<p:commandButton value="Historial" action="#{busquedaBean.historial()}" />
+ 					<p:commandButton value="Acciones" action="#{busquedaBean.acciones()}" /> 
+				</h:panelGrid>
+				<p:dataTable id="lista-pois" var="poi" value="#{busquedaBean.pois}">
+				<p:column headerText="ID">
+						<h:outputText value="#{poi.id}" />
+				</p:column>	
+				<p:column headerText="Nombre">
+						<h:outputText value="#{poi.nombre}" />
+				</p:column>
+				<p:column headerText="Direccion">
+						<h:outputText value="#{poi.direccion.calle} #{poi.direccion.numero}" />
+				</p:column>						
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

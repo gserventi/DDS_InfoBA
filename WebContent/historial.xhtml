@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<f:event listener="#{loginBean.verificarSesionAdministrador()}" type="preRenderView"></f:event>
+</h:head>
+
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	    <h:form>
+	    	<p:panel id="panel" header="Busqueda">
+	    		<h:panelGrid columns="4" cellpadding="5">
+	    
+					<p:inputText id="texto" placeholder="texto" value="#{historialBean.texto}" required="false" label="texto">
+					</p:inputText>
+					<p:commandButton value="Buscar Texto" update="lista-pois"
+						actionListener="#{historialBean.busquedasTexto}" icon="ui-icon-search" />
+				
+				
+				<p:inputText id="Usuario" placeholder="Usuario" value="#{historialBean.usuario}" required="false" label="usuario">
+					</p:inputText>
+					<p:commandButton value="Buscar Usuario" update="lista-pois"
+						actionListener="#{historialBean.busquedasUsuario}" icon="ui-icon-search" />
+				
+				
+				    <p:inputText id="Fechadesde" placeholder="Fechadesde" value="#{historialBean.fechame}" required="false" label="fechame">
+					</p:inputText>
+					<p:inputText id="FechaHasta" placeholder="FechaHasta" value="#{historialBean.fechama}" required="false" label="fechama">
+					</p:inputText>
+					<p:commandButton value="Buscar por Fecha" update="lista-pois"
+						actionListener="#{historialBean.busquedasFecha}" icon="ui-icon-search" />
+				</h:panelGrid>
+				
+				<p:dataTable id="lista-pois" var="busqueda" value="#{historialBean.items}">
+				<p:column headerText="Fecha">
+						<h:outputText value="#{busqueda.fechaFormato}" />
+				</p:column>	
+				<p:column headerText="usuario">
+						<h:outputText value="#{busqueda.usuario}" />
+				</p:column>
+				<p:column headerText="texto">
+						<h:outputText value="#{busqueda.texto}" />
+				</p:column>
+				
+				<p:column headerText="pois">
+						<h:outputText value="#{busqueda.cantResultados}" />		
+				</p:column>				
+				</p:dataTable>
+				
+	    	</p:panel>
+	    </h:form>
+	</ui:define>
+</ui:composition>
+</html>

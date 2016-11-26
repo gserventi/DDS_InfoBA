@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="infoba">
+
+        <description>
+            Persistence unit for JPA with Hibernate
+        </description>
+
+        <class>com.edu.utn.infoba.modelo.Usuario</class>
+        <class>com.edu.utn.infoba.modelo.AccionesUsuario</class>
+        <class>com.edu.utn.infoba.modelo.Terminal</class>
+        <class>com.edu.utn.infoba.modelo.Administrador</class>
+        <class>com.edu.utn.infoba.modelo.PuntoDeInteres</class>
+        <class>com.edu.utn.infoba.modelo.ParadaColectivos</class>
+        <class>com.edu.utn.infoba.modelo.CGP</class>
+        <class>com.edu.utn.infoba.modelo.Tag</class>
+        <class>com.edu.utn.infoba.modelo.Coordenadas</class>
+        <class>com.edu.utn.infoba.modelo.Direccion</class>
+        <class>com.edu.utn.infoba.modelo.Localidad</class>
+        <class>com.edu.utn.infoba.modelo.Provincia</class>
+        <class>com.edu.utn.infoba.modelo.Pais</class>
+        <class>com.edu.utn.infoba.modelo.Rubro</class>
+        <class>com.edu.utn.infoba.modelo.Servicio</class>
+        <class>com.edu.utn.infoba.modelo.Persistible</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/infoba" />
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
