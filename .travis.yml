@@ -16,3 +16,6 @@ before_script:
   - mysql -e 'create database infoba;'
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t a5abbc97-4a98-416c-b5d9-2a2def819580
+notifications:
+  email: false
+  
